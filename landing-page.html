@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Akademia | Vende en Walmart sin inventar productos ni crear marca</title>
+<meta name="description" content="Aprende a vender en el Marketplace de Walmart como distribuidor mayorista. Sin inventar productos, sin crear marca y sin usar redes. Negocio en dólares operado desde cualquier país.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0f1e;
+  --bg-2: #0f1426;
+  --bg-3: #070b16;
+  --text: #ffffff;
+  --text-muted: #c3cde0;
+  --text-dim: #8aa0c4;
+  --accent: #3D5AFE;
+  --accent-2: #188bf6;
+  --accent-3: #5b9cff;
+  --gold: #FFC100;
+  --border: rgba(91, 156, 255, 0.18);
+  --card: rgba(15, 20, 38, 0.65);
+  --radius: 14px;
+  --max: 1180px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 17px;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; line-height: 1.15; letter-spacing: 0.005em; text-transform: uppercase; }
+a { color: var(--accent-3); text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  padding: 18px 36px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(61, 90, 254, 0.35);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { background: #2f49e0; transform: translateY(-2px); box-shadow: 0 16px 36px rgba(61, 90, 254, 0.48); color: #fff; }
+.btn.gold { background: var(--gold); color: #1a1300; box-shadow: 0 10px 30px rgba(255, 193, 0, 0.32); }
+.btn.gold:hover { background: #ffcd33; color: #1a1300; box-shadow: 0 16px 36px rgba(255, 193, 0, 0.45); }
+.btn.lg { padding: 22px 44px; font-size: 20px; }
+
+/* nav */
+nav.top {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(7, 11, 22, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+nav.top .row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
+.brand { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase; }
+.brand span { color: var(--accent-3); }
+.brand small { display: block; font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 0.18em; color: var(--text-dim); text-transform: uppercase; margin-top: 2px; }
+nav .btn { padding: 12px 22px; font-size: 14px; }
+
+/* hero */
+section.hero {
+  padding: 40px 0 44px;
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(61, 90, 254, 0.28), transparent 60%), var(--bg);
+  text-align: center;
+}
+.eyebrow {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(255, 193, 0, 0.10);
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 193, 0, 0.30);
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-size: clamp(26px, 4.2vw, 46px);
+  font-weight: 700;
+  max-width: 920px;
+  margin: 0 auto 14px;
+  line-height: 1.15;
+}
+.hero h1 .hl { color: var(--gold); }
+.hero p.sub {
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto 16px;
+}
+.trust-row { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; color: var(--text-dim); font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+.trust-row span { display: flex; align-items: center; gap: 8px; }
+.trust-row .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+
+/* vsl placeholder */
+.vsl-wrap { max-width: 700px; margin: 0 auto; }
+.vsl-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: linear-gradient(135deg, var(--bg-3), #0a1024);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(61, 90, 254, 0.30);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.vsl-frame::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(400px 200px at 50% 50%, rgba(61, 90, 254, 0.20), transparent 70%);
+  pointer-events: none;
+}
+.vsl-play {
+  width: 86px; height: 86px;
+  border-radius: 50%;
+  background: rgba(61, 90, 254, 0.18);
+  border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+  transition: transform .25s ease, background .25s ease;
+}
+.vsl-play svg { width: 36px; height: 36px; fill: var(--gold); margin-left: 6px; }
+.vsl-frame:hover .vsl-play { transform: scale(1.05); background: rgba(61, 90, 254, 0.28); }
+.vsl-label { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 16px; color: var(--text); letter-spacing: 0.04em; text-transform: uppercase; position: relative; z-index: 1; margin-bottom: 6px; }
+.vsl-sub { font-family: 'Open Sans', sans-serif; font-size: 13px; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; position: relative; z-index: 1; }
+.hero-cta-row { display: flex; justify-content: center; margin-top: 18px; }
+
+/* shared section */
+section { padding: 96px 0; }
+section.alt { background: var(--bg-3); }
+section h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; text-align: center; margin-bottom: 18px; }
+section h2 .hl { color: var(--gold); }
+section .lede { font-family: 'Open Sans', sans-serif; text-align: center; color: var(--text-muted); max-width: 740px; margin: 0 auto 56px; font-size: 19px; }
+
+/* credibility strip */
+.cred { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 28px 0; }
+.cred .row { display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.cred .label { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); }
+.cred .name { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.04em; color: var(--text); text-transform: uppercase; }
+
+/* problem agitation */
+.pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+.pain { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 28px; font-size: 17px; }
+.pain b { color: var(--gold); font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.02em; }
+
+/* solution / mechanism */
+.mech { max-width: 980px; margin: 0 auto; }
+.mech-intro { font-family: 'Open Sans', sans-serif; font-size: 21px; color: var(--text-muted); text-align: center; margin-bottom: 52px; }
+.signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.signal { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px; }
+.signal .num { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 56px; color: var(--accent-3); line-height: 1; margin-bottom: 18px; }
+.signal h3 { font-size: 22px; margin-bottom: 12px; }
+.signal p { color: var(--text-muted); }
+
+/* social proof */
+.wins-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; max-width: 1100px; margin: 0 auto; }
+.win { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.win .amount { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 30px; color: var(--gold); margin-bottom: 6px; }
+.win .who { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 10px; text-transform: uppercase; }
+.win .desc { color: var(--text-muted); font-size: 15px; }
+.proof-note { text-align: center; color: var(--text-dim); font-size: 14px; max-width: 680px; margin: 32px auto 0; }
+
+/* lead magnet */
+.lm-card { max-width: 760px; margin: 0 auto; background: linear-gradient(135deg, rgba(61, 90, 254, 0.20), rgba(255, 193, 0, 0.08)); border: 1px solid var(--accent); border-radius: 20px; padding: 56px 40px; text-align: center; }
+.lm-card h3 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 16px; }
+.lm-card p { color: var(--text-muted); margin-bottom: 32px; }
+
+/* offer */
+.offer-card { max-width: 820px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 56px 40px; }
+.offer-card h3 { font-size: 30px; text-align: center; margin-bottom: 12px; }
+.offer-card .subline { font-family: 'Open Sans', sans-serif; text-align: center; color: var(--text-muted); margin-bottom: 36px; }
+.offer-card ul { list-style: none; padding: 0; max-width: 580px; margin: 0 auto 40px; }
+.offer-card li { padding: 14px 0 14px 32px; border-bottom: 1px solid var(--border); position: relative; }
+.offer-card li:last-child { border-bottom: 0; }
+.offer-card li:before { content: ""; position: absolute; left: 0; top: 22px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(255, 193, 0, 0.18); }
+.offer-card .cta-wrap { text-align: center; }
+
+/* authority */
+.auth-row { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1080px; margin: 0 auto; }
+.auth-row .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+.stat .n { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 30px; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+.stat .l { color: var(--text-muted); font-size: 14px; }
+.auth-row p { color: var(--text-muted); margin-bottom: 16px; font-size: 17px; }
+
+/* final cta */
+section.final { background: linear-gradient(135deg, var(--bg-3), var(--bg-2)); text-align: center; }
+section.final h2 { max-width: 880px; margin: 0 auto 22px; }
+section.final p.sub { color: var(--text-muted); max-width: 700px; margin: 0 auto 38px; font-size: 19px; }
+
+/* faq */
+.faq { max-width: 820px; margin: 0 auto; }
+.q { border: 1px solid var(--border); background: var(--card); border-radius: var(--radius); margin-bottom: 14px; overflow: hidden; }
+.q summary { cursor: pointer; list-style: none; padding: 22px 28px; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.q summary::-webkit-details-marker { display: none; }
+.q summary::after { content: "+"; font-size: 24px; color: var(--gold); transition: transform .25s ease; }
+.q[open] summary::after { transform: rotate(45deg); }
+.q .a { padding: 0 28px 24px; color: var(--text-muted); }
+
+/* footer */
+footer { padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-dim); text-align: center; font-size: 14px; }
+footer p { margin: 6px 0; }
+
+/* scroll reveal */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 720px) {
+  nav.top .row { padding: 8px 0; }
+  .brand { font-size: 18px; }
+  .brand small { display: none; }
+  section.hero { padding: 16px 0 22px; }
+  .eyebrow { font-size: 10px; letter-spacing: 0.06em; padding: 5px 12px; margin-bottom: 10px; }
+  .hero h1 { font-size: 22px; line-height: 1.14; margin-bottom: 10px; }
+  .hero p.sub { font-size: 14px; margin-bottom: 12px; }
+  .trust-row { gap: 12px; font-size: 10px; margin-bottom: 12px; }
+  .hero-cta-row { margin-top: 14px; }
+  .btn.lg { padding: 16px 30px; font-size: 17px; }
+  section { padding: 64px 0; }
+  .auth-row { grid-template-columns: 1fr; gap: 36px; }
+  .lm-card, .offer-card { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="container row">
+    <div class="brand">La <span>Akademia</span><small>by Pablo Alexander</small></div>
+    <a href="#registro" class="btn">Entrenamiento gratis</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Para latinos que quieren ingresos en dólares</span>
+    <h1>Vende en Walmart sin inventar productos, sin crear marca y sin usar <span class="hl">redes sociales</span></h1>
+    <p class="sub">Un negocio real en Estados Unidos, operado desde tu país, como distribuidor mayorista en el Marketplace de Walmart. Paso a paso, desde cero.</p>
+    <div class="trust-row">
+      <span><span class="dot"></span>500+ estudiantes</span>
+      <span><span class="dot"></span>Proveedor real de Walmart</span>
+      <span><span class="dot"></span>Visto en Univisión y Forbes</span>
+    </div>
+    <div class="vsl-wrap">
+      <div class="vsl-frame">
+        <div class="vsl-play">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="vsl-label">Tu VSL va aquí</div>
+        <div class="vsl-sub">Paso 1: Activa el sonido del video</div>
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#registro" class="btn gold lg">Ver el entrenamiento gratuito</a>
+    </div>
+  </div>
+</section>
+
+<div class="cred">
+  <div class="container row">
+    <span class="label">Visto en</span>
+    <span class="name">Univisión</span>
+    <span class="name">Forbes</span>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="container">
+    <h2 class="reveal">Si esto te suena, sigue leyendo</h2>
+    <p class="lede reveal">La mayoría no está estancada por falta de ganas. Está estancada por una de estas cinco razones.</p>
+    <div class="pain-grid">
+      <div class="pain reveal"><b>Ves a otros cobrar en dólares.</b> Sientes que el tren se va y tú sigues atado a una moneda que se devalúa cada mes.</div>
+      <div class="pain reveal"><b>Probaste dropshipping o Amazon.</b> Perdiste dinero o te ahogaste en la complejidad y los costos.</div>
+      <div class="pain reveal"><b>Crees que necesitas vivir allá.</b> Piensas que sin visa, sin dirección o sin mucho capital no puedes vender en Estados Unidos.</div>
+      <div class="pain reveal"><b>Estás cansado de gurús.</b> Venden el sueño y nunca te muestran el negocio real que hay detrás del método.</div>
+      <div class="pain reveal"><b>No sabes por dónde empezar.</b> Tienes las ganas, pero la parálisis te tiene en el mismo punto desde hace meses.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container mech">
+    <h2 class="reveal">El modelo que casi nadie enseña en <span class="hl">español</span></h2>
+    <p class="mech-intro reveal">No es dropshipping ni Amazon FBA. Es distribución mayorista en el Marketplace de Walmart. Revendes productos de marcas que la gente ya busca, como distribuidor. Tres frenos eliminados de un solo golpe.</p>
+    <div class="signals">
+      <div class="signal reveal">
+        <div class="num">01</div>
+        <h3>Sin inventar productos</h3>
+        <p>No creas nada desde cero. Revendes marcas que los clientes de Walmart ya conocen y ya buscan. Cero validación de producto.</p>
+      </div>
+      <div class="signal reveal">
+        <div class="num">02</div>
+        <h3>Sin crear marca ni redes</h3>
+        <p>No necesitas una marca propia, ni grabar contenido, ni perseguir seguidores. El negocio funciona sin que tu cara esté en ningún lado.</p>
+      </div>
+      <div class="signal reveal">
+        <div class="num">03</div>
+        <h3>Menos competencia que Amazon</h3>
+        <p>Walmart está abriendo su marketplace a vendedores terceros de forma activa. Llegas temprano, a un espacio con mucha menos saturación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2 class="reveal">Por qué confiar en este método</h2>
+    <p class="lede reveal">Pablo no vive de vender cursos. Vive de vender en Walmart. La Akademia nace de un negocio real, no al revés.</p>
+    <div class="wins-grid">
+      <div class="win reveal">
+        <div class="amount">500+</div>
+        <div class="who">Estudiantes formados</div>
+        <div class="desc">Personas en Estados Unidos y en toda Latinoamérica aplicando el mismo sistema paso a paso.</div>
+      </div>
+      <div class="win reveal">
+        <div class="amount">Botaniko Group</div>
+        <div class="who">Proveedor de Walmart</div>
+        <div class="desc">La empresa de Pablo es proveedora real del Marketplace de Walmart. El método sale de su propia operación.</div>
+      </div>
+      <div class="win reveal">
+        <div class="amount">Univisión y Forbes</div>
+        <div class="who">Apariciones en medios</div>
+        <div class="desc">Pablo ha sido invitado por medios reconocidos a contar cómo funciona el negocio de distribución en Walmart.</div>
+      </div>
+    </div>
+    <p class="proof-note reveal">Aquí van los casos de estudiantes con nombre, foto y resultado, una vez confirmados con Pablo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="lm-card reveal">
+      <h3>Empieza por el entrenamiento gratuito</h3>
+      <p>En este entrenamiento en línea te muestro el sistema completo para vender en Walmart como distribuidor, desde cero y paso a paso. Es gratis y lo puedes ver hoy.</p>
+      <a href="https://go.la-akademia.online/aprende-desde-cero" class="btn gold lg" target="_blank" rel="noopener">Regístrate al entrenamiento gratuito</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="registro">
+  <div class="container">
+    <h2 class="reveal">Qué te llevas con La Akademia</h2>
+    <p class="lede reveal">La formación completa para montar y operar tu negocio de Walmart desde cualquier país.</p>
+    <div class="offer-card reveal">
+      <h3>El sistema paso a paso</h3>
+      <p class="subline">Empieza por el entrenamiento gratuito. Ahí ves el método antes de decidir nada.</p>
+      <ul>
+        <li>El sistema completo para vender en el Marketplace de Walmart como distribuidor mayorista.</li>
+        <li>Cómo elegir y conseguir los productos de marcas que ya tienen demanda, sin inventar nada.</li>
+        <li>Cómo montar y operar tu negocio desde tu país, con la laptop, sin inventario gigante.</li>
+        <li>Acompañamiento y comunidad de estudiantes que ya están aplicando el mismo sistema.</li>
+        <li>El camino para facturar en dólares con un negocio que se siente legítimo y duradero.</li>
+      </ul>
+      <div class="cta-wrap">
+        <a href="https://go.la-akademia.online/aprende-desde-cero" class="btn gold lg" target="_blank" rel="noopener">Ver el entrenamiento gratuito</a>
+        <p style="margin-top:18px;color:var(--text-dim);font-size:14px;">Los detalles del programa pagado se explican dentro del entrenamiento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="reveal">Quién está detrás</h2>
+    <div class="auth-row">
+      <div class="reveal">
+        <p>Pablo Torrealba es el fundador de La Akademia y de Botaniko Group, una empresa que provee al Marketplace de Walmart. Enseña el mismo modelo que usa en su negocio todos los días.</p>
+        <p>Más de 500 estudiantes ya siguen su sistema desde Estados Unidos y desde toda Latinoamérica. La prueba va primero, la promesa después.</p>
+        <p>Su historia ha llegado a medios como Univisión y Forbes. Si quieres revisar antes de empezar, todo lo que está aquí se puede verificar.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">500+</div><div class="l">Estudiantes</div></div>
+        <div class="stat"><div class="n">Walmart</div><div class="l">Marketplace</div></div>
+        <div class="stat"><div class="n">Botaniko</div><div class="l">Proveedor real</div></div>
+        <div class="stat"><div class="n">EE.UU. y LatAm</div><div class="l">Casos reales</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <h2 class="reveal">Otro año mirando, o el primer paso hoy</h2>
+    <p class="sub reveal">El camino existe y está paso a paso. Empieza por el entrenamiento gratuito, ve el sistema completo con tus propios ojos y decide después. No arriesgas nada por mirar.</p>
+    <a href="https://go.la-akademia.online/aprende-desde-cero" class="btn gold lg" target="_blank" rel="noopener">Regístrate al entrenamiento gratuito</a>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2 class="reveal">Preguntas frecuentes</h2>
+    <div class="faq">
+      <details class="q reveal"><summary>¿Necesito vivir en Estados Unidos?</summary><div class="a">No. El sistema se opera desde cualquier país, con tu laptop. Estudiantes de La Akademia llevan su negocio de Walmart desde toda Latinoamérica.</div></details>
+      <details class="q reveal"><summary>¿Tengo que inventar un producto o una marca?</summary><div class="a">No. Revendes productos de marcas que la gente ya busca en Walmart, como distribuidor. No creas productos, no construyes una marca y no grabas contenido para redes.</div></details>
+      <details class="q reveal"><summary>¿Necesito mucho capital para empezar?</summary><div class="a">El modelo mayorista no exige inventarios enormes ni inventar producto. Se entra por etapas. Dentro del entrenamiento te explico cómo es ese arranque.</div></details>
+      <details class="q reveal"><summary>¿No es esto igual de saturado que Amazon?</summary><div class="a">No. Amazon está saturado y cada vez cuesta más entrar. Walmart está haciendo lo contrario: busca vendedores terceros de forma activa, así que hay mucha menos competencia.</div></details>
+      <details class="q reveal"><summary>No sé nada de esto, ¿puedo igual?</summary><div class="a">Sí. El entrenamiento parte desde cero y la estructura es paso a paso. Está hecho para gente que nunca ha vendido nada en línea.</div></details>
+      <details class="q reveal"><summary>¿Cuánto cuesta el programa?</summary><div class="a">El entrenamiento es gratuito. Los detalles del programa pagado se explican dentro, una vez que ya viste el método y entiendes cómo funciona.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>La Akademia by Pablo Alexander | La Akademia LLC</p>
+    <p>Esta página no está afiliada a Walmart. Los resultados varían según el esfuerzo de cada persona.</p>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
