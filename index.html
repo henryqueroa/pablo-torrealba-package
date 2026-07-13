@@ -56,20 +56,13 @@ a:hover { color: var(--accent-hover); }
 .btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(16, 185, 129, 0.28); color: #03110b; }
 .btn.lg { padding: 20px 36px; font-size: 17px; }
 
-/* nav */
-nav.top {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(6, 7, 10, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-nav.top .row { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-.brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
-.brand .dot { color: var(--accent); }
-nav .btn { padding: 12px 22px; font-size: 13px; }
-
-/* hero */
-section.hero { padding: 100px 0 80px; text-align: center; background: radial-gradient(800px 400px at 50% 0%, rgba(16, 185, 129, 0.10), transparent 60%); }
+/* hero (compacto, estructura Giuliano: el video se ve al abrir) */
+section.hero { padding: 48px 0 0; text-align: center; background: radial-gradient(800px 400px at 50% 0%, rgba(16, 185, 129, 0.10), transparent 60%); }
+.header-brands { display: flex; justify-content: center; align-items: center; gap: 24px; margin-bottom: 48px; }
+.brand-name { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+.brand-zytrom { color: var(--text); }
+.brand-prospect { color: var(--accent); }
+.brand-divider { width: 1px; height: 24px; background: var(--border); }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: 'JetBrains Mono', monospace;
@@ -82,7 +75,7 @@ section.hero { padding: 100px 0 80px; text-align: center; background: radial-gra
   padding: 8px 14px;
   border: 1px solid var(--accent-muted);
   border-radius: 999px;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 .eyebrow .pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); animation: pulse 2s infinite; }
 @keyframes pulse {
@@ -90,12 +83,9 @@ section.hero { padding: 100px 0 80px; text-align: center; background: radial-gra
   70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
   100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
-.hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 700; max-width: 920px; margin: 0 auto 22px; }
+.hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; line-height: 1.1; max-width: 920px; margin: 0 auto 16px; }
 .hero h1 .name { color: var(--accent); }
-.hero p.sub { font-size: clamp(17px, 2vw, 20px); color: var(--text-muted); max-width: 720px; margin: 0 auto 38px; }
-.brand-row { display: flex; gap: 24px; justify-content: center; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--text-muted); margin-bottom: 38px; }
-.brand-row .chip { padding: 10px 18px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); }
-.brand-row .x { color: var(--accent); }
+.hero p.sub { font-size: 17px; color: var(--text-muted); max-width: 580px; margin: 0 auto; line-height: 1.7; }
 
 /* loom */
 .loom-section { padding: 48px 0 0; text-align: center; }
@@ -166,33 +156,28 @@ footer { padding: 36px 0; border-top: 1px solid var(--border); color: var(--text
 .reveal.in { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 720px) {
-  .brand-row { flex-direction: column; gap: 12px; }
   .acc summary { padding: 22px 20px; }
   .acc summary .label { font-size: 17px; }
   .acc .body { padding: 0 20px 22px; padding-top: 20px; }
+}
+@media (max-width: 480px) {
+  .header-brands { gap: 16px; }
+  .brand-name { font-size: 12px; letter-spacing: 1px; }
 }
 </style>
 </head>
 <body>
 
-<nav class="top">
-  <div class="container row">
-    <div class="brand">Zytrom<span class="dot">.</span></div>
-    <a href="https://calendly.com/henryque-zytrom/30min" class="btn" target="_blank" rel="noopener">Agendar una llamada de 20 minutos</a>
-  </div>
-</nav>
-
 <section class="hero">
   <div class="container">
+    <div class="header-brands">
+      <span class="brand-name brand-zytrom">Zytrom</span>
+      <div class="brand-divider"></div>
+      <span class="brand-name brand-prospect">La Akademia</span>
+    </div>
     <span class="eyebrow"><span class="pulse"></span>Hecho exclusivamente para Pablo Torrealba</span>
     <h1>Un paquete de marketing completo, hecho desde cero para <span class="name">La Akademia</span></h1>
     <p class="sub">Entregables a medida, una página de ventas completa con tu marca, una secuencia de 10 correos y el esquema del sistema que convierte tu entrenamiento gratuito en ventas. Todo alrededor de los huecos que encontré en tu funnel.</p>
-    <div class="brand-row">
-      <span class="chip">Zytrom</span>
-      <span class="x">×</span>
-      <span class="chip">La Akademia</span>
-    </div>
-    <a href="https://calendly.com/henryque-zytrom/30min" class="btn lg" target="_blank" rel="noopener">Agendar una llamada de 20 minutos</a>
   </div>
 </section>
 
